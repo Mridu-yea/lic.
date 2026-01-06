@@ -1,0 +1,471 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+:root {
+    --primary-blue: #383838;
+    --primary-yellow: #FFD700;
+    --white: #FFFFFF;
+    --text-dark: #2C3E50;
+    --text-light: #5A6C7D;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+    
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 245, 245, 0.95) 100%), url('your-image-path.jpg') center/cover fixed;
+    background-blend-mode: overlay;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+    
+    background: url('bg.jpg') center/cover fixed;
+    background-attachment: fixed;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 1rem 0;
+    animation: slideDown 0.5s ease;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-blue);
+    transition: var(--transition);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-icon-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.nav-icon-link i {
+    font-size: 1.1rem;
+    color: var(--primary-blue);
+}
+
+.nav-icon-link:hover {
+    transform: translateY(-2px);
+    color: var(--primary-blue);
+}
+
+/* Logo */
+.logo-container {
+    position: absolute;
+    top: px;
+    left: 50%;
+    scale: 0.9;
+    transform: translateX(-50%);
+    z-index: 1001;
+}
+
+.lic-logo {
+    width: 120px;
+    height: auto;
+    background: var(--white);
+    padding: 0.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* General Plans Section */
+.general-plans-section {
+    min-height: 100vh;
+    
+    padding: 80px 2rem 4rem;
+}
+
+.plans-header {
+    
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: -30px;
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-title {
+    font-size: 3rem;
+    color: rgb(0, 0, 0);
+    margin-bottom: 0rem;
+    font-weight: 700;
+}
+
+.page-description {
+    font-size: 1.1rem;
+    color: rgb(56, 56, 56);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Carousel Wrapper */
+.carousel-wrapper {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.carousel-container {
+    background: rgba(255, 255, 255, 0.651);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px 10px  rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Main Carousel */
+.carousel-main {
+    
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background:none;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.carousel-image {
+   
+    scale: 1;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+    
+}
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 36px;
+  color: white;
+  cursor: pointer;
+}
+
+
+/* Navigation Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-blue);
+    backdrop-filter: blur(10px);
+    color: var(--white);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background: var(--primary-blue);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn-prev {
+    left: 2rem;
+}
+
+.carousel-btn-next {
+    right: 2rem;
+}
+
+.carousel-btn i {
+    font-size: 1.5rem;
+}
+
+/* Slide Counter */
+.slide-counter {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    z-index: 10;
+}
+
+/* Thumbnail Container */
+.thumbnail-container {
+    background: var(--primary-blue);
+    padding: 0.5rem;
+}
+
+.thumbnail-scroll {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 0.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--white) rgba(255, 255, 255, 0.1);
+}
+
+.thumbnail-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.thumbnail-scroll::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.thumbnail-scroll::-webkit-scrollbar-thumb {
+    background: var(--primary-yellow);
+    border-radius: 10px;
+}
+
+.thumbnail {
+    flex-shrink: 0;
+    width: 90px;
+    height: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 3px solid transparent;
+    opacity: 0.6;
+}
+
+.thumbnail:hover {
+    opacity: 1;
+    border-color: var(--primary-yellow);
+}
+
+.thumbnail.active {
+    border-color: var(--primary-yellow);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Dot Indicators */
+.dot-indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    background: var(--primary-blue);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.dot:hover {
+    background: rgba(255, 215, 0, 0.6);
+}
+
+.dot.active {
+    width: 30px;
+    border-radius: 5px;
+    background: var(--primary-yellow);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .carousel-btn-prev {
+        left: 1rem;
+    }
+
+    .carousel-btn-next {
+        right: 1rem;
+    }
+
+    .thumbnail {
+        width: 100px;
+        height: 65px;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .general-plans-section {
+        padding: 100px 1rem 2rem;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .page-description {
+        font-size: 1rem;
+    }
+
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+    }
+
+    .carousel-btn i {
+        font-size: 1.2rem;
+    }
+
+    .slide-counter {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+        bottom: 1rem;
+        left: 1rem;
+    }
+
+    .thumbnail {
+        width: 80px;
+        height: 55px;
+    }
+
+    .nav-left, .nav-right {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .lic-logo {
+        width: 80px;
+    }
+}

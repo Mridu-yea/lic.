@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIC Plans - Secure Your Future</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#plans" class="nav-link">Plans</a>
+            </div>
+            <!-- LIC Logo -->
+        <div class="logo-container">
+            <img src="images\lic-logo.png" alt="LIC Logo" class="lic-logo">
+        </div>
+            <div class="nav-right">
+                <a href="https://wa.me/918368745776" target="_blank" class="nav-icon-link">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>8368745776</span>
+                </a>
+                <a href="https://maps.app.goo.gl/YksEQXqgcYW6beEk9" id="locationLink" class="nav-icon-link" target="_blank">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Branch Location</span>
+                </a>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <a href="#home" class="mobile-nav-link">Home</a>
+                <a href="#plans" class="mobile-nav-link">Plans</a>
+                <a href="https://wa.me/918368745776" target="_blank" class="mobile-nav-link">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="https://maps.app.goo.gl/YksEQXqgcYW6beEk9" target="_blank" class="mobile-nav-link">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Location</span>
+                </a>
+            </div>
+        </div>
+        <!-- Mobile Overlay -->
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+    </nav>
+
+    
+
+    <!-- Landing Page Section -->
+    <section id="home" class="landing-section">
+        <div class="content-container">
+            <div class="text-content">
+                <h1 class="main-title">Secure your family's future today</h1>
+                <p class="description">Life insurance that works for you. Simple plans, honest advice, and the protection your loved ones deserve.</p>
+                <div class="cta-buttons">
+                    <a href="#plans" class="btn btn-plans">Plans</a>
+                    <a href="#contact" class="btn btn-contact">Contact</a>
+                </div>
+            </div>
+            <div class="image-content">
+                <img src="images\professional-woman.png" alt="Professional Woman" class="hero-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Section -->
+    <section id="plans" class="plans-section">
+        
+        <div class="plan-text">
+            
+            <h3 class="plans-main-title">Find your plan</h3>
+            <p class="plans-description">Build wealth while protecting your child's future with education and marriage benefits.</p>
+
+        </div>
+
+        
+        <div class="plans-grid">
+            <div class="plan-card" data-plan="child">
+                <div class="plan-image">
+                    <img src="images\child-plans.png" alt="Child Plans">
+                </div>
+                <h4 class="plan-title">Child plans for tomorrow</h4>
+                <p class="plan-desc">Guaranteed returns and life protection combined. Start early, grow steadily, sleep well.</p>
+            </div>
+
+            <div class="plan-card" data-plan="retirement">
+                <div class="plan-image">
+                    <img src="images\retirement-plans.png" alt="Retirement Plans">
+                </div>
+                <h4 class="plan-title">Retirement plans for peace</h4>
+                <p class="plan-desc">Monthly pension and life cover working together. Retire knowing you're covered.</p>
+            </div>
+
+            <div class="plan-card" data-plan="hni">
+                <div class="plan-image">
+                    <img src="images\hni-plans.png" alt="HNI Plans">
+                </div>
+                <h4 class="plan-title">H.N.I plans</h4>
+                <p class="plan-desc">Participate in market gains with downside protection. Your money works harder.</p>
+            </div>
+
+            <div class="plan-card" data-plan="general">
+                <div class="plan-image">
+                    <img src="images\general-plans.png" alt="General Plans">
+                </div>
+                <h4 class="plan-title">General plans</h4>
+                <p class="plan-desc">Maximum coverage at minimum cost. The safety net your family needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-text">
+            <h2 class="contact-title">Ready to get started?</h2>
+            <p class="contact-description">Let's talk about what matters most to you and your family's security.</p>
+        </div>
+        
+        
+        <div class="contact-image-container">
+            <img src="images\contact.png" alt="Contact Us" class="contact-image">
+        </div>
+
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-home"></i>
+                <h4>Address</h4>
+                <p class="contact-placeholder">395-A Devbhumi <br> Kanjhawala Road , Bawana Delhi -110039 </p>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <h4>Call us</h4>
+                <p class="contact-placeholder">+91 8368745776 <br> +91 8700706011</p>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <h4>Email us</h4>
+                <p class="contact-placeholder">jyoti.chawdhary1981@gmail.com</p>
+            </div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+`
+
+    <script src="script.js"></script>
+</body>
+</html>
