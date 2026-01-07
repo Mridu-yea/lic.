@@ -15,14 +15,13 @@
     --transition: all 0.3s ease;
 }
 
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--text-dark);
     line-height: 1.6;
     overflow-x: hidden;
     
-    background: url('images/bg.jpg') center/cover fixed;
+    background: url('bg.jpg') center/cover fixed;
     background-attachment: fixed;
 }
 html {
@@ -460,8 +459,4 @@ html {
     .lic-logo {
         width: 80px;
     }
-
 }
-
-
-
