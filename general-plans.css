@@ -30,7 +30,7 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     
-    background: url('bg.jpg') center/cover fixed;
+    background: url('images/bg.jpg') center/cover fixed;
     background-attachment: fixed;
 }
 html {
@@ -470,4 +470,5 @@ html {
     }
 
 }
+
 
